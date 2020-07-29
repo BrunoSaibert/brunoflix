@@ -1,0 +1,8 @@
+
+[*]
+indent_style = space // windows e linux entendem o final da linha da mesma forma
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true // tira os espaços no fim da linha
+insert_final_newline = true // adiciona uma linha no fim do arquivo
