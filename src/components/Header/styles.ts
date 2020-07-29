@@ -26,7 +26,7 @@ export const Container = styled.header<ContainerProps>`
   ${prop =>
     prop.isScrolled &&
     css`
-      background: rgba(0, 0, 0);
+      background: #141414;
     `}
 `;
 
