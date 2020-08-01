@@ -26,16 +26,16 @@
 </h4>
 
 <p align="center">
- <a href="#-sobre-o-projeto">Sobre</a> •
- <a href="#-funcionalidades">Funcionalidades</a> •
- <a href="#-layout">Layout</a> •
- <a href="#-como-executar-o-projeto">Como executar</a> •
- <a href="#-tecnologias">Tecnologias</a> •
- <a href="#-autor">Autor</a> •
- <a href="#-licença">Licença</a>
+ <a href="#--sobre-o-projeto">Sobre</a> •
+ <a href="#--funcionalidades">Funcionalidades</a> •
+ <a href="#--layout">Layout</a> •
+ <a href="#--como-executar-o-projeto">Como executar</a> •
+ <a href="#--tecnologias">Tecnologias</a> •
+ <a href="#--autor">Autor</a> •
+ <a href="#--licença">Licença</a>
 </p>
 
-## [](https://github.com/BrunoSaibert/brunoflix#-sobre-o-projeto) 💻 Sobre o projeto
+## [](https://github.com/BrunoSaibert/brunoflix#--sobre-o-projeto) 💻 Sobre o projeto
 
 📺 Brunoflix - é um clone da interface da [Netflix](https://www.netflix.com/).
 
@@ -43,7 +43,7 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
 
 ---
 
-## [](https://github.com/BrunoSaibert/brunoflix#-funcionalidades) ⚙️ Funcionalidades
+## [](https://github.com/BrunoSaibert/brunoflix#-%EF%B8%8F-funcionalidades) ⚙️ Funcionalidades
 
 - [ ] Header:
 
@@ -102,13 +102,13 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
 
 ---
 
-## [](https://github.com/BrunoSaibert/brunoflix#-layout) 🎨 Layout
+## [](https://github.com/BrunoSaibert/brunoflix#--layout) 🎨 Layout
 
 ![Brunoflix layout](https://raw.githubusercontent.com/BrunoSaibert/brunoflix/master/src/assets/project/brunoflix-hero.jpg)
 
 ---
 
-## [](https://github.com/BrunoSaibert/brunoflix#-como-executar-o-projeto) 🚀 Como executar o projeto
+## [](https://github.com/BrunoSaibert/brunoflix#--como-executar-o-projeto) 🚀 Como executar o projeto
 
 ### Pré-requisitos
 
@@ -138,14 +138,13 @@ $ yarn start
 
 ---
 
-## [](https://github.com/BrunoSaibert/brunoflix#-tecnologias) 🛠 Tecnologias
+## [](https://github.com/BrunoSaibert/brunoflix#--tecnologias) 🛠 Tecnologias
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
 #### **Website** ([React](https://reactjs.org/) + [TypeScript](https://www.typescriptlang.org/))
 
  <img style="border-radius: 8px;" src="https://raw.githubusercontent.com/BrunoSaibert/brunoflix/master/src/assets/project/react-logo.png" width="100px;" alt="React logo"/>
-
  <img style="border-radius: 8px;" src="https://raw.githubusercontent.com/BrunoSaibert/brunoflix/master/src/assets/project/typescript-logo.png" width="100px;" alt="TypeScript logo"/>
 
 - **[React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)**
@@ -189,7 +188,7 @@ git push origin my-feature
 
 ---
 
-## [](https://github.com/BrunoSaibert/brunoflix#-autor) 👨‍🚀 Autor
+## [](https://github.com/BrunoSaibert/brunoflix#--autor) 👨‍🚀 Autor
 
 <a href="https://brunosaibert.com.br/">
  <img style="border-radius: 50%;" src="https://avatars2.githubusercontent.com/u/40339324?s=460&u=4f5a7b83aa4e018b4eccbeaa1f6a6b8b04e0e4b7&v=4" width="100px;" alt="Bruno Henrique Saibert"/>
@@ -207,6 +206,6 @@ Feito com ❤️ por Bruno Henrique Saibert 👋 Entre em contato!
 
 ---
 
-## [](https://github.com/BrunoSaibert/brunoflix#-licença) 📝 Licença
+## [](https://github.com/BrunoSaibert/brunoflix#--licença) 📝 Licença
 
 Este projeto esta sobe a licença [MIT](./LICENSE).
