@@ -1,38 +1,38 @@
 <p align="center">
-<img alt="GitHub language count" src="https://img.shields.io/github/languages/count/BrunoSaibert/brunoflix?color=%2304D361&style=for-the-badge">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/BrunoSaibert/brunoflix?color=%2304D361&style=for-the-badge">
 
-<img alt="Repository size" src="https://img.shields.io/github/repo-size/BrunoSaibert/brunoflix?style=for-the-badge">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/BrunoSaibert/brunoflix?style=for-the-badge">
 
-<a href="https://github.com/BrunoSaibert/brunoflix/commits/master">
-<img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/BrunoSaibert/brunoflix?style=for-the-badge">
-</a>
+  <a href="https://github.com/BrunoSaibert/brunoflix/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/BrunoSaibert/brunoflix?style=for-the-badge">
+  </a>
 
-<img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen?style=for-the-badge">
-<a href="https://github.com/BrunoSaibert/brunoflix/stargazers">
-<img alt="Stargazers" src="https://img.shields.io/github/stars/BrunoSaibert/brunoflix?style=for-the-badge">
-</a>
+   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen?style=for-the-badge">
+   <a href="https://github.com/BrunoSaibert/brunoflix/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/BrunoSaibert/brunoflix?style=for-the-badge">
+  </a>
 
-<a href="https://brunosaibert.com.br/">
-<img alt="Feito por Bruno Saibert" src="https://img.shields.io/badge/feito%20por-Bruno%20Saibert-%231b9?style=for-the-badge">
-</a>
+  <a href="https://brunosaibert.com.br/">
+    <img alt="Feito por Bruno Saibert" src="https://img.shields.io/badge/feito%20por-Bruno%20Saibert-%231b9?style=for-the-badge">
+  </a>
 
 </p>
 <h1 align="center">
-<img alt="Brunoflix" title="Brunoflix" src="https://raw.githubusercontent.com/BrunoSaibert/brunoflix/master/src/assets/brunoflix.png" />
+    <img alt="Brunoflix" title="Brunoflix" src="https://raw.githubusercontent.com/BrunoSaibert/brunoflix/master/src/assets/brunoflix.png" />
 </h1>
 
 <h4 align="center">
-🚧  Brunoflix 📺 Em construção 🏗 🚧
+	🚧  Brunoflix 📺 Em construção 🏗 🚧
 </h4>
 
 <p align="center">
-<a href="#-sobre-o-projeto">Sobre</a> •
-<a href="#-funcionalidades">Funcionalidades</a> •
-<a href="#-layout">Layout</a> •
-<a href="#-como-executar-o-projeto">Como executar</a> •
-<a href="#-tecnologias">Tecnologias</a> •
-<a href="#-autor">Autor</a> •
-<a href="#-licença">Licença</a>
+ <a href="#-sobre-o-projeto">Sobre</a> •
+ <a href="#-funcionalidades">Funcionalidades</a> •
+ <a href="#-layout">Layout</a> •
+ <a href="#-como-executar-o-projeto">Como executar</a> •
+ <a href="#-tecnologias">Tecnologias</a> •
+ <a href="#-autor">Autor</a> •
+ <a href="#-licença">Licença</a>
 </p>
 
 ## [](https://github.com/BrunoSaibert/brunoflix#-sobre-o-projeto) 💻 Sobre o projeto
@@ -47,55 +47,56 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
 
 - [ ] Header:
 
-- [x] menu fixo no topo e ao sair do topo deve alterar a cor de fundo
-- [x] navegar para a página inicial
-- [x] navegar entre as páginas
-- [x] setar a página atual
-- [ ] campo de busca
-- [ ] badge alerta
-- [ ] menu suspenso alerta
-- [ ] menu suspenso usuário
+  - [x] menu fixo no topo e ao sair do topo deve alterar a cor de fundo
+  - [x] navegar para a página inicial
+  - [x] navegar entre as páginas
+  - [x] setar a página atual
+  - [ ] campo de busca
+  - [ ] badge alerta
+  - [ ] menu suspenso alerta
+  - [ ] menu suspenso usuário
 
 - [ ] Hero:
 
-- [x] conter imagem de fundo
-- [ ] após 3 segundos trocar a imagem de fundo por um vídeo
-- [x] conter as informações de título, descrição e botões
+  - [x] conter imagem de fundo
+  - [ ] após 3 segundos trocar a imagem de fundo por um vídeo
+  - [x] conter as informações de título, descrição e botões
 
 - [ ] Loading
 
 - [ ] Card:
-- [ ] sem foco deve conter apenas a imagem de fundo
-- [ ] com foco deve:
-- [ ] aumentar de tamanho:
-- [ ] origem no centro para os comuns
-- [ ] ficar acima dos demais cards
-- [ ] mostrar os dados como titulo e descrição
-- [ ] se tem exibição:
-- [ ] barra de progresso
 
-* [ ] Slider (imagem vertical):
+  - [ ] sem foco deve conter apenas a imagem de fundo
+  - [ ] com foco deve:
+    - [ ] aumentar de tamanho:
+      - [ ] origem no centro para os comuns
+    - [ ] ficar acima dos demais cards
+    - [ ] mostrar os dados como titulo e descrição
+  - [ ] se tem exibição:
+    - [ ] barra de progresso
 
-- [ ] conter título
-- [ ] conter cards
-- [ ] conter navegação
+- [ ] Slider (imagem vertical):
+
+  - [ ] conter título
+  - [ ] conter cards
+  - [ ] conter navegação
 
 - [ ] SliderMyList:
 
-- [ ] conter título
-- [ ] conter cards
+  - [ ] conter título
+  - [ ] conter cards
 
 - [ ] SliderOriginal (imagem horizontal):
 
-- [ ] conter título
-- [ ] conter cards
-- [ ] conter navegação
+  - [ ] conter título
+  - [ ] conter cards
+  - [ ] conter navegação
 
 - [ ] SliderTop10:
 
-- [ ] conter título
-- [ ] conter cards
-- [ ] conter navegação
+  - [ ] conter título
+  - [ ] conter cards
+  - [ ] conter navegação
 
 - [ ] Footer
 
@@ -143,9 +144,9 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 #### **Website** ([React](https://reactjs.org/) + [TypeScript](https://www.typescriptlang.org/))
 
-<img style="border-radius: 8px;" src="https://raw.githubusercontent.com/BrunoSaibert/brunoflix/master/src/assets/project/react-logo.png" width="100px;" alt="React logo"/>
+ <img style="border-radius: 8px;" src="https://raw.githubusercontent.com/BrunoSaibert/brunoflix/master/src/assets/project/react-logo.png" width="100px;" alt="React logo"/>
 
-<img style="border-radius: 8px;" src="https://raw.githubusercontent.com/BrunoSaibert/brunoflix/master/src/assets/project/typescript-logo.png" width="100px;" alt="TypeScript logo"/>
+ <img style="border-radius: 8px;" src="https://raw.githubusercontent.com/BrunoSaibert/brunoflix/master/src/assets/project/typescript-logo.png" width="100px;" alt="TypeScript logo"/>
 
 - **[React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)**
 - **[React Icons](https://react-icons.github.io/react-icons/)**
@@ -191,11 +192,11 @@ git push origin my-feature
 ## [](https://github.com/BrunoSaibert/brunoflix#-autor) 👨‍🚀 Autor
 
 <a href="https://brunosaibert.com.br/">
-<img style="border-radius: 50%;" src="https://avatars2.githubusercontent.com/u/40339324?s=460&u=4f5a7b83aa4e018b4eccbeaa1f6a6b8b04e0e4b7&v=4" width="100px;" alt="Bruno Henrique Saibert"/>
-<br />
-<sub><b>Bruno Henrique Saibert</b></sub>
-</a>
-<br />
+ <img style="border-radius: 50%;" src="https://avatars2.githubusercontent.com/u/40339324?s=460&u=4f5a7b83aa4e018b4eccbeaa1f6a6b8b04e0e4b7&v=4" width="100px;" alt="Bruno Henrique Saibert"/>
+ <br />
+ <sub><b>Bruno Henrique Saibert</b></sub>
+ </a>
+ <br />
 
 Feito com ❤️ por Bruno Henrique Saibert 👋 Entre em contato!
 
