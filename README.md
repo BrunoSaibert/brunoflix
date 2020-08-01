@@ -25,6 +25,8 @@
 	🚧  Brunoflix 📺 Em construção 🏗 🚧
 </h4>
 
+![Brunoflix layout](https://raw.githubusercontent.com/BrunoSaibert/brunoflix/master/src/assets/project/brunoflix-hero.jpg)
+
 <p align="center">
  <a href="#--sobre-o-projeto">Sobre</a> •
  <a href="#-%EF%B8%8F-funcionalidades">Funcionalidades</a> •
