@@ -102,7 +102,7 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
 
 ## [](https://github.com/BrunoSaibert/brunoflix#-layout) 🎨 Layout
 
-![Brunoflix layout](https://raw.githubusercontent.com/BrunoSaibert/brunoflix/master/src/assets/projeto/brunoflix-hero.jpg)
+![Brunoflix layout](https://raw.githubusercontent.com/BrunoSaibert/brunoflix/master/src/assets/project/brunoflix-hero.jpg)
 
 ---
 
@@ -142,8 +142,8 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 #### **Website** ([React](https://reactjs.org/) + [TypeScript](https://www.typescriptlang.org/))
 
-![React](https://raw.githubusercontent.com/BrunoSaibert/brunoflix/master/src/assets/projeto/react-logo.png)
-![TypeScript](https://raw.githubusercontent.com/BrunoSaibert/brunoflix/master/src/assets/projeto/typescript-logo.png)
+![React](https://raw.githubusercontent.com/BrunoSaibert/brunoflix/master/src/assets/project/react-logo.png)
+![TypeScript](https://raw.githubusercontent.com/BrunoSaibert/brunoflix/master/src/assets/project/typescript-logo.png)
 
 - **[React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)**
 - **[React Icons](https://react-icons.github.io/react-icons/)**
