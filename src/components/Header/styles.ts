@@ -14,7 +14,7 @@ export const Container = styled.header<ContainerProps>`
   left: 0;
   right: 0;
 
-  z-index: 99;
+  z-index: 2;
   padding: 0 4%;
   height: 70px;
   margin: 0 auto;

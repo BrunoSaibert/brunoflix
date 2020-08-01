@@ -68,12 +68,13 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
 
 - [ ] Card:
 
-  - [ ] sem foco deve conter apenas a imagem de fundo
-  - [ ] com foco deve:
-    - [ ] aumentar de tamanho:
-      - [ ] origem no centro para os comuns
-    - [ ] ficar acima dos demais cards
-    - [ ] mostrar os dados como titulo e descrição
+  - [x] sem foco deve conter apenas a imagem de fundo
+  - [x] com foco deve:
+    - [x] aumentar de tamanho:
+      - [x] origem no centro para os comuns
+      - [x] origem nas laterais para o primeiro e último
+    - [x] ficar acima dos demais cards
+    - [x] mostrar título e botões
   - [ ] se tem exibição:
     - [ ] barra de progresso
 
