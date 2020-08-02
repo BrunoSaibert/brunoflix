@@ -1,33 +1,5 @@
 import styled, { css } from 'styled-components';
 
-interface WarpperProps {
-  qtdCards: number;
-}
-
-export const Warpper = styled.section<WarpperProps>`
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin: 0 4%;
-
-  & > .card {
-    flex: 0 0
-      calc(
-        (100% - (${prop => prop.qtdCards - 1} * 4px)) / ${prop => prop.qtdCards}
-      );
-  }
-
-  .card:first-child:hover {
-    transform-origin: left;
-  }
-
-  .card:nth-child(${prop => prop.qtdCards}):hover {
-    transform-origin: right;
-  }
-
-  height: 230px;
-`;
-
 export const Content = styled.div`
   display: flex;
   align-items: flex-start;
@@ -47,7 +19,6 @@ export const Content = styled.div`
 
 interface ContainerProps {
   bgImage: string;
-  isActive?: boolean;
 }
 
 export const Container = styled.div.attrs({
@@ -57,8 +28,9 @@ export const Container = styled.div.attrs({
   align-items: center;
   justify-content: flex-end;
   flex-direction: column;
-  overflow: hidden;
 
+  cursor: pointer;
+  overflow: hidden;
   width: 100%;
   height: 150px;
   z-index: 1;
@@ -71,22 +43,6 @@ export const Container = styled.div.attrs({
 
   transition: all 0.2s ease-in;
   transition-delay: 0.3s;
-
-  ${prop =>
-    prop.isActive &&
-    css`
-      transform: scale(1.5);
-      transition-delay: 0.6s;
-      height: 220px;
-      z-index: 3;
-
-      border-radius: 4px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
-
-      ${Content} {
-        opacity: 1;
-      }
-    `}
 
   &:hover {
     transform: scale(1.5);

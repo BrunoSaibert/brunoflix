@@ -47,7 +47,7 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
 
 ## [](https://github.com/BrunoSaibert/brunoflix#-%EF%B8%8F-funcionalidades) ⚙️ Funcionalidades
 
-- [ ] Header:
+- [x] Header:
 
   - [x] menu fixo no topo e ao sair do topo deve alterar a cor de fundo
   - [x] navegar para a página inicial
@@ -58,7 +58,7 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
   - [ ] menu suspenso alerta
   - [ ] menu suspenso usuário
 
-- [ ] Hero:
+- [x] Hero:
 
   - [x] conter imagem de fundo
   - [ ] após 3 segundos trocar a imagem de fundo por um vídeo
@@ -66,7 +66,7 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
 
 - [ ] Loading
 
-- [ ] Card:
+- [x] Card:
 
   - [x] sem foco deve conter apenas a imagem de fundo
   - [x] com foco deve:
@@ -78,13 +78,13 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
   - [ ] se tem exibição:
     - [ ] barra de progresso
 
-- [ ] Slider (imagem vertical):
+- [x] Slider (imagem vertical):
 
-  - [ ] conter título
-  - [ ] conter cards
-  - [ ] conter navegação
+  - [x] conter título
+  - [x] conter cards
+  - [x] conter navegação
 
-- [ ] SliderMyList:
+- [ ] SliderMyListPage (sem navegação):
 
   - [ ] conter título
   - [ ] conter cards
