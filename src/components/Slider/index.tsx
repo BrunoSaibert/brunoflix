@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
+import { getQtdDimensions } from '../../helpers/getQtdDimensions';
+
+import Loading from '../Loading';
 import Card from '../Card';
 
 import * as S from './styles';
@@ -17,14 +20,16 @@ const Slider: React.FC<SliderProps> = ({ title }) => {
   const [page, setPage] = useState(1);
   const [hasPrev, setHasPrev] = useState(false);
   const [hasNext, setHasNext] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    setIsLoading(true);
+    getQtdCardsVisible();
+
     getMovies('popular');
 
-    getDimensions();
-
-    window.addEventListener('resize', getDimensions);
-    return () => window.removeEventListener('resize', getDimensions);
+    window.addEventListener('resize', getQtdCardsVisible);
+    return () => window.removeEventListener('resize', getQtdCardsVisible);
   }, []);
 
   const getMovies = (type: String) => {
@@ -34,29 +39,15 @@ const Slider: React.FC<SliderProps> = ({ title }) => {
       .then(response => response.json())
       .then(response => {
         setMovies(response.results);
+
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 3000);
       });
   };
 
-  const getDimensions = () => {
-    const { innerWidth: width } = window;
-
-    let qtd = 2;
-
-    if (width >= 1800) {
-      qtd = 6;
-    } else if (width >= 1500) {
-      qtd = 5;
-    } else if (width >= 1000) {
-      qtd = 4;
-    } else if (width >= 800) {
-      qtd = 3;
-    } else if (width >= 600) {
-      qtd = 2;
-    } else {
-      qtd = 1;
-    }
-
-    setQtdCards(qtd);
+  const getQtdCardsVisible = () => {
+    setQtdCards(getQtdDimensions());
   };
 
   const handlePage = (direction: number) => {
@@ -72,6 +63,8 @@ const Slider: React.FC<SliderProps> = ({ title }) => {
     setHasPrev(true);
     setHasNext(true);
   };
+
+  if (isLoading) return <Loading qtdCards={qtdCards} />;
 
   return (
     <S.Container>

@@ -8,7 +8,7 @@ const Dashboard: React.FC = () => {
     <>
       <Hero />
       <Slider title="Minha lista" />
-      <Slider title="Populares a Brunoflix" />
+      <Slider title="Populares na Brunoflix" />
       <Slider title="Assistir novamente" />
       <Slider title="Em alta" />
     </>

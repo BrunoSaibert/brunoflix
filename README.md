@@ -64,7 +64,7 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
   - [ ] após 3 segundos trocar a imagem de fundo por um vídeo
   - [x] conter as informações de título, descrição e botões
 
-- [ ] Loading
+- [x] Loading
 
 - [x] Card:
 
