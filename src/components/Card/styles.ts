@@ -19,6 +19,7 @@ export const Content = styled.div`
 
 interface ContainerProps {
   bgImage: string;
+  orientation: 'vertical' | 'horizontal';
 }
 
 export const Container = styled.div.attrs({
@@ -32,7 +33,7 @@ export const Container = styled.div.attrs({
   cursor: pointer;
   overflow: hidden;
   width: 100%;
-  height: 150px;
+  height: ${prop => (prop.orientation === 'vertical' ? '400px' : '150px')};
   z-index: 1;
 
   background: #141414;
@@ -45,9 +46,11 @@ export const Container = styled.div.attrs({
   transition-delay: 0.3s;
 
   &:hover {
-    transform: scale(1.5);
+    transform: scale(
+      ${prop => (prop.orientation === 'vertical' ? '1.2' : '1.5')}
+    );
     transition-delay: 0.6s;
-    height: 220px;
+    height: ${prop => (prop.orientation === 'vertical' ? '420px' : '220px')};
     z-index: 4;
 
     border-radius: 4px;

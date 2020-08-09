@@ -9,12 +9,20 @@ import Card from '../Card';
 import * as S from './styles';
 
 interface SliderProps {
+  type: string;
+  list: string;
   title: string;
+  original?: boolean;
 }
 
 const apiKey = 'e5693481ef000bfdd855a0f21ad39631';
 
-const Slider: React.FC<SliderProps> = ({ title }) => {
+const Slider: React.FC<SliderProps> = ({
+  type,
+  list,
+  title,
+  original = false,
+}) => {
   const [movies, setMovies] = useState([]);
   const [qtdCards, setQtdCards] = useState(2);
   const [page, setPage] = useState(1);
@@ -26,15 +34,15 @@ const Slider: React.FC<SliderProps> = ({ title }) => {
     setIsLoading(true);
     getQtdCardsVisible();
 
-    getMovies('popular');
+    getMovies();
 
     window.addEventListener('resize', getQtdCardsVisible);
     return () => window.removeEventListener('resize', getQtdCardsVisible);
   }, []);
 
-  const getMovies = (type: String) => {
+  const getMovies = () => {
     fetch(
-      `https://api.themoviedb.org/3/movie/${type}?api_key=${apiKey}&language=pt-BR`,
+      `https://api.themoviedb.org/3/${type}/${list}?api_key=${apiKey}&language=pt-BR`,
     )
       .then(response => response.json())
       .then(response => {
@@ -70,15 +78,27 @@ const Slider: React.FC<SliderProps> = ({ title }) => {
     <S.Container>
       <S.Title>{title}</S.Title>
 
-      <S.SliderContainer>
-        <S.Content qtdCards={qtdCards} page={page}>
-          {movies.map(({ id, title, backdrop_path }) => (
-            <Card
-              key={id}
-              title={title}
-              bgImage={`http://image.tmdb.org/t/p/w500/${backdrop_path}`}
-            />
-          ))}
+      <S.SliderContainer orientation={original ? 'vertical' : 'horizontal'}>
+        <S.Content
+          qtdCards={qtdCards}
+          page={page}
+          orientation={original ? 'vertical' : 'horizontal'}
+        >
+          {movies
+            .filter(
+              ({ backdrop_path, poster_path }) =>
+                backdrop_path !== null && poster_path !== null,
+            )
+            .map(({ id, title, name, backdrop_path, poster_path }) => (
+              <Card
+                key={id}
+                title={title || name}
+                bgImage={`http://image.tmdb.org/t/p/w500/${
+                  original ? poster_path : backdrop_path
+                }`}
+                orientation={original ? 'vertical' : 'horizontal'}
+              />
+            ))}
         </S.Content>
 
         {hasPrev && (
