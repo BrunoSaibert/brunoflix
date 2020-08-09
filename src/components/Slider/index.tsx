@@ -30,16 +30,6 @@ const Slider: React.FC<SliderProps> = ({
   const [hasNext, setHasNext] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
-    setIsLoading(true);
-    getQtdCardsVisible();
-
-    getMovies();
-
-    window.addEventListener('resize', getQtdCardsVisible);
-    return () => window.removeEventListener('resize', getQtdCardsVisible);
-  }, []);
-
   const getMovies = () => {
     fetch(
       `https://api.themoviedb.org/3/${type}/${list}?api_key=${apiKey}&language=pt-BR`,
@@ -53,6 +43,16 @@ const Slider: React.FC<SliderProps> = ({
         }, 3000);
       });
   };
+
+  useEffect(() => {
+    setIsLoading(true);
+    getQtdCardsVisible();
+
+    getMovies();
+
+    window.addEventListener('resize', getQtdCardsVisible);
+    return () => window.removeEventListener('resize', getQtdCardsVisible);
+  }, []);
 
   const getQtdCardsVisible = () => {
     setQtdCards(getQtdDimensions());
