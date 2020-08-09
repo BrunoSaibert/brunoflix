@@ -5,7 +5,7 @@ export const getQtdDimensions = () => {
 
   if (width >= 1800) {
     qtd = 6;
-  } else if (width >= 1500) {
+  } else if (width >= 1300) {
     qtd = 5;
   } else if (width >= 1000) {
     qtd = 4;

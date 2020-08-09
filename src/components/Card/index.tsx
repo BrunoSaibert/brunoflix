@@ -7,11 +7,16 @@ import * as S from './styles';
 interface CardProps {
   bgImage: string;
   title: string;
+  orientation: 'vertical' | 'horizontal';
 }
 
-const Card: React.FC<CardProps> = ({ bgImage, title }) => {
+const Card: React.FC<CardProps> = ({
+  bgImage,
+  title,
+  orientation = 'horizontal',
+}) => {
   return (
-    <S.Container bgImage={bgImage}>
+    <S.Container bgImage={bgImage} orientation={orientation}>
       <S.Content>
         <S.Actions>
           <S.ActionItem isActive>

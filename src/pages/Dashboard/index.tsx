@@ -7,10 +7,11 @@ const Dashboard: React.FC = () => {
   return (
     <>
       <Hero />
-      <Slider title="Minha lista" />
-      <Slider title="Populares na Brunoflix" />
-      <Slider title="Assistir novamente" />
-      <Slider title="Em alta" />
+      <Slider type="movie" list="now_playing" title="Minha lista" />
+      <Slider type="movie" list="popular" title="Populares na Brunoflix" />
+      <Slider type="movie" list="upcoming" title="Assistir novamente" />
+      <Slider type="movie" list="top_rated" title="Em alta" />
+      <Slider type="tv" list="popular" title="Originais Brunoflix" original />
     </>
   );
 };

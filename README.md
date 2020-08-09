@@ -89,11 +89,11 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
   - [ ] conter título
   - [ ] conter cards
 
-- [ ] SliderOriginal (imagem horizontal):
+- [x] SliderOriginal (imagem horizontal):
 
-  - [ ] conter título
-  - [ ] conter cards
-  - [ ] conter navegação
+  - [x] conter título
+  - [x] conter cards vertical
+  - [x] conter navegação
 
 - [ ] SliderTop10:
 
