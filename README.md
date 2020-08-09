@@ -101,7 +101,7 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
   - [ ] conter cards
   - [ ] conter navegação
 
-- [ ] Footer
+- [x] Footer
 
 ---
 
