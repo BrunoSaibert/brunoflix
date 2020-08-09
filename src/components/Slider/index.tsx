@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 import { getQtdDimensions } from '../../helpers/getQtdDimensions';
@@ -30,7 +30,7 @@ const Slider: React.FC<SliderProps> = ({
   const [hasNext, setHasNext] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
-  const getMovies = () => {
+  const getMovies = useCallback(() => {
     fetch(
       `https://api.themoviedb.org/3/${type}/${list}?api_key=${apiKey}&language=pt-BR`,
     )
@@ -42,7 +42,28 @@ const Slider: React.FC<SliderProps> = ({
           setIsLoading(false);
         }, 3000);
       });
-  };
+  }, [type, list]);
+
+  const getQtdCardsVisible = useCallback(() => {
+    setQtdCards(getQtdDimensions());
+  }, []);
+
+  const handlePage = useCallback(
+    (direction: number) => {
+      const nextPage = page + direction;
+      setPage(nextPage);
+
+      if (nextPage <= 1) {
+        return setHasPrev(false);
+      } else if (nextPage >= movies.length / qtdCards) {
+        return setHasNext(false);
+      }
+
+      setHasPrev(true);
+      setHasNext(true);
+    },
+    [movies, page, qtdCards],
+  );
 
   useEffect(() => {
     setIsLoading(true);
@@ -52,25 +73,7 @@ const Slider: React.FC<SliderProps> = ({
 
     window.addEventListener('resize', getQtdCardsVisible);
     return () => window.removeEventListener('resize', getQtdCardsVisible);
-  }, []);
-
-  const getQtdCardsVisible = () => {
-    setQtdCards(getQtdDimensions());
-  };
-
-  const handlePage = (direction: number) => {
-    const nextPage = page + direction;
-    setPage(nextPage);
-
-    if (nextPage <= 1) {
-      return setHasPrev(false);
-    } else if (nextPage >= movies.length / qtdCards) {
-      return setHasNext(false);
-    }
-
-    setHasPrev(true);
-    setHasNext(true);
-  };
+  }, [getMovies, getQtdCardsVisible]);
 
   if (isLoading) return <Loading qtdCards={qtdCards} />;
 
