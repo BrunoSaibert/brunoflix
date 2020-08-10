@@ -13,7 +13,7 @@ export const Container = styled.section<ContainerProps>`
     url(${prop => prop.bgImage}) no-repeat;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   margin-bottom: -100px;
 `;
 
@@ -31,6 +31,12 @@ export const Content = styled.div`
 
 export const Logo = styled.img`
   width: 100%;
+  padding-bottom: 16px;
+`;
+
+export const Title = styled.h2`
+  font-size: 30px;
+  font-weight: bold;
   padding-bottom: 16px;
 `;
 
@@ -61,7 +67,7 @@ export const Info = styled.li<InfoProps>`
 `;
 
 export const Synopse = styled.p`
-  color: #999;
+  color: #e5e5e5;
   font-size: 16px;
   line-height: 22px;
   padding-bottom: 16px;

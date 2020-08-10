@@ -15,8 +15,6 @@ interface SliderProps {
   original?: boolean;
 }
 
-const apiKey = 'e5693481ef000bfdd855a0f21ad39631';
-
 const Slider: React.FC<SliderProps> = ({
   type,
   list,
@@ -32,7 +30,7 @@ const Slider: React.FC<SliderProps> = ({
 
   const getMovies = useCallback(() => {
     fetch(
-      `https://api.themoviedb.org/3/${type}/${list}?api_key=${apiKey}&language=pt-BR`,
+      `https://api.themoviedb.org/3/${type}/${list}?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR`,
     )
       .then(response => response.json())
       .then(response => {
@@ -93,7 +91,7 @@ const Slider: React.FC<SliderProps> = ({
             .map(({ id, title, name, backdrop_path, poster_path }) => (
               <Card
                 key={id}
-                title={title || name}
+                title={id || title || name}
                 bgImage={`http://image.tmdb.org/t/p/w500/${
                   original ? poster_path : backdrop_path
                 }`}

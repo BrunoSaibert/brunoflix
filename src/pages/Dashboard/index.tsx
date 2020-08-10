@@ -6,7 +6,7 @@ import Slider from '../../components/Slider';
 const Dashboard: React.FC = () => {
   return (
     <>
-      <Hero />
+      <Hero type="tv" id={70523} />
       <Slider type="movie" list="now_playing" title="Minha lista" />
       <Slider type="movie" list="popular" title="Populares na Brunoflix" />
       <Slider type="movie" list="upcoming" title="Assistir novamente" />

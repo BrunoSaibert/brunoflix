@@ -6,7 +6,7 @@ import Slider from '../../components/Slider';
 const Movies: React.FC = () => {
   return (
     <>
-      <Hero />
+      <Hero type="movie" id={299534} />
       <Slider type="movie" list="popular" title="Populares na Brunoflix" />
       <Slider
         type="movie"
