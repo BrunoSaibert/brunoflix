@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components';
 
-export const Container = styled.section`
+export const Container = styled.section.attrs({
+  className: 'slider',
+})`
   display: flex;
   justify-content: center;
   flex-direction: column;

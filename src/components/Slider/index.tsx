@@ -38,9 +38,7 @@ const Slider: React.FC<SliderProps> = ({
       .then(response => {
         setMovies(response.results);
 
-        setTimeout(() => {
-          setIsLoading(false);
-        }, 3000);
+        setIsLoading(false);
       });
   }, [type, list]);
 

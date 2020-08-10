@@ -28,6 +28,10 @@ export const Container = styled.header<ContainerProps>`
     css`
       background: #141414;
     `}
+
+  & + .slider, & + .loading {
+    margin-top: 100px;
+  }
 `;
 
 export const Content = styled.div`
