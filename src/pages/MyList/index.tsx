@@ -7,8 +7,6 @@ import { getQtdDimensions } from '../../helpers/getQtdDimensions';
 
 import * as S from './styles';
 
-const apiKey = 'e5693481ef000bfdd855a0f21ad39631';
-
 const MyList: React.FC = () => {
   const [movies, setMovies] = useState([]);
   const [qtdCards, setQtdCards] = useState(2);
@@ -16,7 +14,7 @@ const MyList: React.FC = () => {
 
   const getMovies = useCallback(() => {
     fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=pt-BR`,
+      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR`,
     )
       .then(response => response.json())
       .then(response => {

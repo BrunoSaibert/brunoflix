@@ -61,6 +61,7 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
 - [x] Hero:
 
   - [x] conter imagem de fundo
+  - [x] carregar dados da API
   - [ ] após 3 segundos trocar a imagem de fundo por um vídeo
   - [x] conter as informações de título, descrição e botões
 
