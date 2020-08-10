@@ -84,10 +84,10 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
   - [x] conter cards
   - [x] conter navegação
 
-- [ ] SliderMyListPage (sem navegação):
+- [x] SliderMyListPage (sem navegação):
 
-  - [ ] conter título
-  - [ ] conter cards
+  - [x] conter título
+  - [x] conter cards
 
 - [x] SliderOriginal (imagem horizontal):
 
@@ -100,6 +100,14 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
   - [ ] conter título
   - [ ] conter cards
   - [ ] conter navegação
+
+- [x] Pages:
+
+  - [x] Início
+  - [x] Séries
+  - [x] Filmes
+  - [x] Mais recentes
+  - [x] Minha lista
 
 - [x] Footer
 

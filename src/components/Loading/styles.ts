@@ -1,6 +1,8 @@
 import styled, { keyframes } from 'styled-components';
 
-export const Container = styled.section`
+export const Container = styled.section.attrs({
+  className: 'loading',
+})`
   display: flex;
   align-items: center;
 
