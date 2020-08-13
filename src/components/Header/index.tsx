@@ -13,12 +13,9 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.pageYOffset > 1) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.pageYOffset > 1)
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -26,9 +23,11 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <S.Container isScrolled={isScrolled}>
+    <S.Container data-testid="header-container" isScrolled={isScrolled}>
       <S.Content>
-        <S.Logo src={logo} alt="Brunoflix" />
+        <Link to="/" data-testid="Brunoflix Logo">
+          <S.Logo src={logo} alt="Brunoflix" />
+        </Link>
 
         <S.Nav>
           <S.NavLink>
