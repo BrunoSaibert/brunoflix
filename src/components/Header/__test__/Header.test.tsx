@@ -6,13 +6,14 @@ import { MemoryRouter } from 'react-router-dom';
 
 import Header from '../';
 
-const wrapper = (link = "/") => render(
-  <MemoryRouter initialEntries={[link]} >
-    <Header />
-  </MemoryRouter>
-);
+const wrapper = (link = '/') =>
+  render(
+    <MemoryRouter initialEntries={[link]}>
+      <Header />
+    </MemoryRouter>,
+  );
 
-it('Header Page', async () => {
+it('Header Component', async () => {
   const { container } = wrapper();
 
   expect(await axe(container)).toHaveNoViolations();
@@ -40,29 +41,29 @@ it('Header alterar cor após evento de scroll', async () => {
 it('Verifica o link: Brunoflix Logo', async () => {
   wrapper();
 
-  expect(screen.getByTestId(/Brunoflix Logo/i)).toHaveAttribute("href", '/');
+  expect(screen.getByTestId(/Brunoflix Logo/i)).toHaveAttribute('href', '/');
 });
 
 const links = [
   {
     title: 'Início',
-    url: '/'
+    url: '/',
   },
   {
     title: 'Séries',
-    url: '/series'
+    url: '/series',
   },
   {
     title: 'Filmes',
-    url: '/movies'
+    url: '/movies',
   },
   {
     title: 'Mais recentes',
-    url: '/latest'
+    url: '/latest',
   },
   {
     title: 'Minha lista',
-    url: '/my-list'
+    url: '/my-list',
   },
 ];
 
@@ -70,6 +71,6 @@ links.forEach(item => {
   it(`Verifica o link: ${item.title}`, async () => {
     wrapper(item.url);
 
-    expect(screen.getByText(item.title)).toHaveAttribute("href", item.url);
+    expect(screen.getByText(item.title)).toHaveAttribute('href', item.url);
   });
 });
