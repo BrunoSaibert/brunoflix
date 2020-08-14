@@ -10,11 +10,7 @@ interface CardProps {
   orientation: 'vertical' | 'horizontal';
 }
 
-const Card: React.FC<CardProps> = ({
-  bgImage,
-  title,
-  orientation = 'horizontal',
-}) => {
+const Card: React.FC<CardProps> = ({ bgImage, title, orientation }) => {
   return (
     <S.Container bgImage={bgImage} orientation={orientation}>
       <S.Content>
