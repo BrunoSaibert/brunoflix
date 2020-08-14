@@ -51,7 +51,7 @@ export const Container = styled.div.attrs({
     );
     transition-delay: 0.6s;
     height: ${prop => (prop.orientation === 'vertical' ? '420px' : '220px')};
-    z-index: 4;
+    z-index: 100;
 
     border-radius: 4px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);

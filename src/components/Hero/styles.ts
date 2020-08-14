@@ -21,7 +21,7 @@ export const Content = styled.div`
   width: 40%;
   height: 100vh;
   padding: 0 4%;
-  background: linear-gradient(90deg, #141414 50%, transparent 100%);
+  background: linear-gradient(90deg, #141414 30%, transparent 100%);
 
   display: flex;
   align-items: flex-start;
