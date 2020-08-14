@@ -6,7 +6,7 @@ import Slider from '../../components/Slider';
 const Series: React.FC = () => {
   return (
     <>
-      <Hero type="tv" id={60735} />
+      <Hero type="tv" id={1409} />
       <Slider type="tv" list="on_the_air" title="Populares na Brunoflix" />
       <Slider type="tv" list="popular" title="Originais Brunoflix" original />
       <Slider type="tv" list="top_rated" title="Em alta" />
