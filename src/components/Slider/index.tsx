@@ -102,6 +102,8 @@ const Slider: React.FC<SliderProps> = ({
 
         {hasPrev && (
           <S.Button
+            id="previous-button"
+            title="Previous"
             direction="prev"
             onClick={() => {
               handlePage(-1);
@@ -112,6 +114,8 @@ const Slider: React.FC<SliderProps> = ({
         )}
         {hasNext && (
           <S.Button
+            id="next-button"
+            title="Next"
             direction="next"
             onClick={() => {
               handlePage(1);
