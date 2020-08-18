@@ -69,6 +69,7 @@ interface ButtonProps {
 
 export const Button = styled.button.attrs({
   className: 'control',
+  type: 'button',
 })<ButtonProps>`
   position: absolute;
   top: 50%;

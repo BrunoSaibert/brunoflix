@@ -34,7 +34,7 @@ export const Logo = styled.img`
   padding-bottom: 16px;
 `;
 
-export const Title = styled.h2`
+export const Title = styled.h1`
   font-size: 30px;
   font-weight: bold;
   padding-bottom: 16px;
@@ -66,7 +66,7 @@ export const Info = styled.li<InfoProps>`
     `}
 `;
 
-export const Synopse = styled.p`
+export const Sinopse = styled.p`
   color: #e5e5e5;
   font-size: 16px;
   line-height: 22px;
@@ -104,7 +104,7 @@ export const Button = styled.button<ButtonProps>`
   color: #141414;
 
   ${prop =>
-    prop.variant === 'secundary' &&
+    prop.variant === 'secondary' &&
     css`
       background: rgba(109, 109, 110, 0.7);
       color: #fff;

@@ -27,16 +27,17 @@ const Hero: React.FC<HeroProps> = ({ type, id }) => {
   const [qtdCards, setQtdCards] = useState(2);
   const [isLoading, setIsLoading] = useState(false);
 
-  const getMovie = useCallback(() => {
-    fetch(
+  const getMovie = useCallback(async () => {
+    await fetch(
       `https://api.themoviedb.org/3/${type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR`,
     )
-      .then(response => response.json())
       .then(response => {
-        console.log(response);
-        setMovie(response);
-
+        return response.json();
+      })
+      .then(response => {
         setIsLoading(false);
+
+        setMovie(response);
       });
   }, [type, id]);
 
@@ -62,7 +63,9 @@ const Hero: React.FC<HeroProps> = ({ type, id }) => {
 
         <S.InfoList>
           <S.Info>
-            {new Date(movie.release_date || movie.last_air_date).getFullYear()}
+            {String(
+              new Date(movie.release_date || movie.last_air_date).getFullYear(),
+            )}
           </S.Info>
           <S.Info badge>16</S.Info>
           {movie.number_of_seasons && (
@@ -70,15 +73,15 @@ const Hero: React.FC<HeroProps> = ({ type, id }) => {
           )}
         </S.InfoList>
 
-        <S.Synopse>{movie.overview}</S.Synopse>
+        <S.Sinopse>{movie.overview}</S.Sinopse>
 
         <S.ButtonGroup>
           <S.Button>
             <FaPlay /> Assistir
           </S.Button>
 
-          <S.Button variant="secundary">
-            <FaInfoCircle /> Mais insformações
+          <S.Button variant="secondary">
+            <FaInfoCircle /> Mais informações
           </S.Button>
         </S.ButtonGroup>
       </S.Content>
