@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, wait } from '@testing-library/react';
+import { render, screen, wait, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import Slider from '../';
@@ -113,7 +113,9 @@ it('Verifica o conteúdo', async () => {
   });
 });
 
-it('Verifica os botões', async () => {
+it.only('Verifica os botões de navegação', async () => {
+  jest.useFakeTimers();
+
   const { container } = wrapper({
     type: 'type',
     list: 'list',
@@ -123,10 +125,25 @@ it('Verifica os botões', async () => {
 
   await wait(() => expect(screen.queryByTestId('loading')).toBeNull());
 
-  // expect(container).toMatchInlineSnapshot();
+  window.innerWidth = 600;
+  fireEvent(window, new Event('resize'));
+
+  const previous = container.querySelector('#previous-button');
+  const next = container.querySelector('#next-button');
 
   await wait(() => {
-    expect(container.querySelector('#previous-button')).not.toBeInTheDocument();
-    expect(container.querySelector('#next-button')).toBeInTheDocument();
+    expect(previous).not.toBeInTheDocument();
+    expect(next).toBeInTheDocument();
+  });
+
+  fireEvent.click(next);
+
+  jest.advanceTimersByTime(1000);
+
+  await wait(() => {
+    expect(previous).toBeInTheDocument();
+    expect(next).not.toBeInTheDocument();
   });
 });
+
+// expect(container).toMatchInlineSnapshot(``);
