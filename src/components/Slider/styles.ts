@@ -65,6 +65,7 @@ export const Content = styled.div<ContentProps>`
 
 interface ButtonProps {
   direction: 'next' | 'prev';
+  isVisible: boolean;
 }
 
 export const Button = styled.button.attrs({
@@ -110,5 +111,12 @@ export const Button = styled.button.attrs({
     prop.direction === 'prev' &&
     css`
       left: calc(-4% - 4px);
+    `}
+
+  ${prop =>
+    !prop.isVisible &&
+    css`
+      opacity: 0;
+      pointer-events: none;
     `}
 `;
