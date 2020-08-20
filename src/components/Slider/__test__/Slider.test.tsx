@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, wait } from '@testing-library/react';
+import { render, screen, wait, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
 
 import Slider from '../';
@@ -49,8 +49,24 @@ beforeEach(() => {
         },
         {
           id: 3,
-          title: 'Card 3',
+          name: 'Card 3',
           overview: 'Overview Card 3',
+          backdrop_path: '/backdrop_path.jpg',
+          poster_path: '/poster_path.jpg',
+          release_date: '2020-01-01',
+        },
+        {
+          id: 4,
+          title: 'Card 4',
+          overview: 'Overview Card 4',
+          backdrop_path: '/backdrop_path.jpg',
+          poster_path: '/poster_path.jpg',
+          release_date: '2020-01-01',
+        },
+        {
+          id: 5,
+          name: 'Card 5',
+          overview: 'Overview Card 5',
           backdrop_path: '/backdrop_path.jpg',
           poster_path: '/poster_path.jpg',
           release_date: '2020-01-01',
@@ -96,7 +112,7 @@ it('Slider Component Original', async () => {
 });
 
 it('Verifica o conteúdo', async () => {
-  wrapper({
+  const { container } = wrapper({
     type: 'type',
     list: 'list',
     title: 'Meu Slider',
@@ -110,10 +126,15 @@ it('Verifica o conteúdo', async () => {
 
     expect(screen.getByText(/card 0/i)).toBeInTheDocument();
     expect(screen.getByText(/card 1/i)).toBeInTheDocument();
+
+    expect(container.querySelector('#previous-button')).toBeInTheDocument();
+    expect(container.querySelector('#next-button')).toBeInTheDocument();
   });
 });
 
-it('Verifica os botões', async () => {
+it('Verifica os botões de navegação', async () => {
+  jest.useFakeTimers();
+
   const { container } = wrapper({
     type: 'type',
     list: 'list',
@@ -123,10 +144,55 @@ it('Verifica os botões', async () => {
 
   await wait(() => expect(screen.queryByTestId('loading')).toBeNull());
 
-  // expect(container).toMatchInlineSnapshot();
+  window.innerWidth = 600;
+  fireEvent(window, new Event('resize'));
+
+  const previous = container.querySelector('#previous-button');
+  const next = container.querySelector('#next-button');
+
+  // Página 1
+  await wait(() => {
+    expect(previous).toBeDisabled();
+    expect(next).not.toBeDisabled();
+  });
+
+  fireEvent.click(next);
+
+  // Página 2
+  jest.advanceTimersByTime(1000);
 
   await wait(() => {
-    expect(container.querySelector('#previous-button')).not.toBeInTheDocument();
-    expect(container.querySelector('#next-button')).toBeInTheDocument();
+    expect(previous).not.toBeDisabled();
+    expect(next).not.toBeDisabled();
+  });
+
+  fireEvent.click(next);
+
+  // Página 3
+  jest.advanceTimersByTime(1000);
+
+  await wait(() => {
+    expect(previous).not.toBeDisabled();
+    expect(next).toBeDisabled();
+  });
+
+  fireEvent.click(previous);
+
+  // Página 2
+  jest.advanceTimersByTime(1000);
+
+  await wait(() => {
+    expect(previous).not.toBeDisabled();
+    expect(next).not.toBeDisabled();
+  });
+
+  fireEvent.click(previous);
+
+  // Página 1
+  jest.advanceTimersByTime(1000);
+
+  await wait(() => {
+    expect(previous).toBeDisabled();
+    expect(next).not.toBeDisabled();
   });
 });

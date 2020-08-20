@@ -15,12 +15,7 @@ interface SliderProps {
   original?: boolean;
 }
 
-const Slider: React.FC<SliderProps> = ({
-  type,
-  list,
-  title,
-  original = false,
-}) => {
+const Slider: React.FC<SliderProps> = ({ type, list, title, original }) => {
   const [movies, setMovies] = useState([]);
   const [qtdCards, setQtdCards] = useState(2);
   const [page, setPage] = useState(1);
@@ -28,8 +23,8 @@ const Slider: React.FC<SliderProps> = ({
   const [hasNext, setHasNext] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
-  const getMovies = useCallback(() => {
-    fetch(
+  const getMovies = useCallback(async () => {
+    await fetch(
       `https://api.themoviedb.org/3/${type}/${list}?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR`,
     )
       .then(response => response.json())
@@ -49,14 +44,17 @@ const Slider: React.FC<SliderProps> = ({
       const nextPage = page + direction;
       setPage(nextPage);
 
+      setHasPrev(true);
+      setHasNext(true);
+
       if (nextPage <= 1) {
         return setHasPrev(false);
       } else if (nextPage >= movies.length / qtdCards) {
         return setHasNext(false);
+      } else {
+        setHasPrev(true);
+        setHasNext(true);
       }
-
-      setHasPrev(true);
-      setHasNext(true);
     },
     [movies, page, qtdCards],
   );
@@ -100,30 +98,30 @@ const Slider: React.FC<SliderProps> = ({
             ))}
         </S.Content>
 
-        {hasPrev && (
-          <S.Button
-            id="previous-button"
-            title="Previous"
-            direction="prev"
-            onClick={() => {
-              handlePage(-1);
-            }}
-          >
-            <FaChevronLeft />
-          </S.Button>
-        )}
-        {hasNext && (
-          <S.Button
-            id="next-button"
-            title="Next"
-            direction="next"
-            onClick={() => {
-              handlePage(1);
-            }}
-          >
-            <FaChevronRight />
-          </S.Button>
-        )}
+        <S.Button
+          id="previous-button"
+          title="Previous"
+          direction="prev"
+          isVisible={hasPrev}
+          disabled={!hasPrev}
+          onClick={() => {
+            handlePage(-1);
+          }}
+        >
+          <FaChevronLeft />
+        </S.Button>
+        <S.Button
+          id="next-button"
+          title="Next"
+          direction="next"
+          isVisible={hasNext}
+          disabled={!hasNext}
+          onClick={() => {
+            handlePage(1);
+          }}
+        >
+          <FaChevronRight />
+        </S.Button>
       </S.SliderContainer>
     </S.Container>
   );
