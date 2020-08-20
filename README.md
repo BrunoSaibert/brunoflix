@@ -62,8 +62,8 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
 
   - [x] conter imagem de fundo
   - [x] carregar dados da API
-  - [ ] após 3 segundos trocar a imagem de fundo por um vídeo
   - [x] conter as informações de título, descrição e botões
+  - [ ] após 3 segundos trocar a imagem de fundo por um vídeo
 
 - [x] Loading
 
@@ -78,12 +78,14 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
     - [x] mostrar título e botões
   - [ ] se tem exibição:
     - [ ] barra de progresso
+    - [ ] esconder o título
 
 - [x] Slider (imagem vertical):
 
   - [x] conter título
   - [x] conter cards
   - [x] conter navegação
+  - [ ] conter paginação
 
 - [x] SliderMyListPage (sem navegação):
 
@@ -102,6 +104,12 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
   - [ ] conter cards
   - [ ] conter navegação
 
+- [ ] Modal de detalhes:
+
+  - [ ] conter título
+  - [ ] conter descrição
+  - [ ] conter vídeo
+
 - [x] Pages:
 
   - [x] Início
@@ -109,6 +117,7 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
   - [x] Filmes
   - [x] Mais recentes
   - [x] Minha lista
+  - [ ] Busca
 
 - [x] Footer
 
@@ -127,6 +136,10 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/). Para gerenciar os pacotes, você pode utilizar o [NPM](https://www.npmjs.com/) ou o [YARN](https://classic.yarnpkg.com/lang/en/).
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/).
+
+### 🎲 API
+
+O projeto utiliza a API do [The Movie Database](https://www.themoviedb.org), faça seu cadastro de forma gratuita e adicione a chave de desenvolvedor no arquivo `.env` conforme o exemplo no arquivo `.env.example`
 
 #### 🧭 Rodando a aplicação
 
