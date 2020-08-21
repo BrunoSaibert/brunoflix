@@ -24,7 +24,7 @@ const MyList: React.FC = () => {
 
         setIsLoading(false);
       });
-  }, [type]);
+  }, []);
 
   const getQtdCardsVisible = useCallback(() => {
     setQtdCards(getQtdDimensions());
