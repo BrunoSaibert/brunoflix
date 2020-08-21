@@ -32,7 +32,7 @@ const Player: React.FC<PlayerProps> = ({ videoId, type }) => {
     <S.Container
       title="player"
       data-testid="player"
-      src={`http://www.youtube.com/embed/${data.key}?autoplay=1&mute=0`}
+      src={`https://www.youtube.com/embed/${data.key}?autoplay=1&mute=0`}
     />
   );
 };
