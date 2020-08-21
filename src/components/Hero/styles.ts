@@ -27,6 +27,10 @@ export const Content = styled.div`
   align-items: flex-start;
   justify-content: center;
   flex-direction: column;
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 export const Logo = styled.img`

@@ -12,6 +12,9 @@ const Dashboard: React.FC = () => {
       <Slider type="movie" list="upcoming" title="Assistir novamente" />
       <Slider type="movie" list="top_rated" title="Em alta" />
       <Slider type="tv" list="popular" title="Originais Brunoflix" original />
+      <Slider type="tv" list="on_the_air" title="Lançamentos" />
+      <Slider type="tv" list="airing_today" title="Novidades" />
+      <Slider type="tv" list="top_rated" title="Aclamados" />
     </>
   );
 };

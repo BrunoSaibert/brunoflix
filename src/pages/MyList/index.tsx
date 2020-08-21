@@ -7,6 +7,8 @@ import { getQtdDimensions } from '../../helpers/getQtdDimensions';
 
 import * as S from './styles';
 
+const type = 'movie';
+
 const MyList: React.FC = () => {
   const [movies, setMovies] = useState([]);
   const [qtdCards, setQtdCards] = useState(2);
@@ -14,7 +16,7 @@ const MyList: React.FC = () => {
 
   const getMovies = useCallback(() => {
     fetch(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR`,
+      `https://api.themoviedb.org/3/${type}/popular?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR`,
     )
       .then(response => response.json())
       .then(response => {
@@ -50,6 +52,8 @@ const MyList: React.FC = () => {
           .map(({ id, title, name, backdrop_path }) => (
             <Card
               key={id}
+              cardId={id}
+              type={type}
               title={title || name}
               bgImage={`http://image.tmdb.org/t/p/w500/${backdrop_path}`}
               orientation="horizontal"

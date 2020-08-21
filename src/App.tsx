@@ -8,15 +8,17 @@ import Footer from './components/Footer';
 
 import Routes from './routes';
 
-const App: React.FC = () => (
-  <>
-    <BrowserRouter>
-      <Header />
-      <Routes />
-      <Footer />
-    </BrowserRouter>
-    <GlobalStyle />
-  </>
-);
+const App: React.FC = () => {
+  return (
+    <>
+      <BrowserRouter>
+        <Header />
+        <Routes />
+        <Footer />
+      </BrowserRouter>
+      <GlobalStyle />
+    </>
+  );
+};
 
 export default App;

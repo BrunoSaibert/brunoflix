@@ -89,6 +89,8 @@ const Slider: React.FC<SliderProps> = ({ type, list, title, original }) => {
             .map(({ id, title, name, backdrop_path, poster_path }) => (
               <Card
                 key={id}
+                cardId={id}
+                type={type}
                 title={title || name}
                 bgImage={`http://image.tmdb.org/t/p/w500/${
                   original ? poster_path : backdrop_path
