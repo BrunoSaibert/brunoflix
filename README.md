@@ -52,7 +52,7 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
   - [x] menu fixo no topo e ao sair do topo deve alterar a cor de fundo
   - [x] navegar para a página inicial
   - [x] navegar entre as páginas
-  - [x] setar a página atual
+  - [x] setar página atual
   - [ ] campo de busca
   - [ ] badge alerta
   - [ ] menu suspenso alerta
@@ -117,6 +117,7 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
   - [x] Filmes
   - [x] Mais recentes
   - [x] Minha lista
+  - [x] Assistir trailer
   - [ ] Busca
 
 - [x] Footer

@@ -4,7 +4,8 @@ export const Container = styled.section.attrs({
   className: 'loading',
 })`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
+  min-height: 1000px;
 
   padding: 0 4%;
   height: 230px;

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { FaPlay, FaInfoCircle } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
 import { getQtdDimensions } from '../../helpers/getQtdDimensions';
 
@@ -29,7 +30,7 @@ const Hero: React.FC<HeroProps> = ({ type, id }) => {
 
   const getMovie = useCallback(async () => {
     await fetch(
-      `https://api.themoviedb.org/3/${type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR`,
+      `https://api.themoviedb.org/3/${type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR&append_to_response=videos`,
     )
       .then(response => {
         return response.json();
@@ -76,13 +77,17 @@ const Hero: React.FC<HeroProps> = ({ type, id }) => {
         <S.Sinopse>{movie.overview}</S.Sinopse>
 
         <S.ButtonGroup>
-          <S.Button>
-            <FaPlay /> Assistir
-          </S.Button>
+          <Link to={`/watch/${type}/${id}`} data-testid="Assistir">
+            <S.Button>
+              <FaPlay /> Assistir
+            </S.Button>
+          </Link>
 
-          <S.Button variant="secondary">
-            <FaInfoCircle /> Mais informações
-          </S.Button>
+          <Link to={`/details/${type}/${id}`} data-testid="Informacoes">
+            <S.Button variant="secondary">
+              <FaInfoCircle /> Mais informações
+            </S.Button>
+          </Link>
         </S.ButtonGroup>
       </S.Content>
     </S.Container>

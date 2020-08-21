@@ -1,6 +1,7 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render, screen, fireEvent } from '@testing-library/react';
 import { axe } from 'jest-axe';
+import { MemoryRouter } from 'react-router-dom';
 
 import Card from '../';
 
@@ -8,8 +9,27 @@ interface CardProps {
   orientation: 'vertical' | 'horizontal';
 }
 
+const mockHistoryPush = jest.fn();
+
+jest.mock('react-router-dom', () => ({
+  ...jest.requireActual('react-router-dom'),
+  useHistory: () => ({
+    push: mockHistoryPush,
+  }),
+}));
+
 const wrapper = ({ orientation }: CardProps) =>
-  render(<Card bgImage="" title="Card title" orientation={orientation} />);
+  render(
+    <MemoryRouter>
+      <Card
+        bgImage=""
+        title="Card title"
+        cardId={123}
+        type="movie"
+        orientation={orientation}
+      />
+    </MemoryRouter>,
+  );
 
 it('Card Component', async () => {
   const { container } = wrapper({ orientation: 'horizontal' });
@@ -23,6 +43,16 @@ it('Verifica o conteúdo', async () => {
   expect(screen.getByText(/Card title/i)).toBeInTheDocument();
 });
 
-it('Verifica orientação vertical', async () => {
+it('Orientação vertical', async () => {
   wrapper({ orientation: 'vertical' });
+
+  expect(screen.getByText(/Card title/i)).toBeInTheDocument();
+});
+
+it('Click', async () => {
+  wrapper({ orientation: 'horizontal' });
+
+  fireEvent.click(screen.getByText(/Card title/i));
+
+  expect(mockHistoryPush).toHaveBeenCalledWith('/watch/movie/123');
 });
