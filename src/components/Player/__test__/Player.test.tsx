@@ -42,7 +42,7 @@ it('Player iframe', async () => {
   await wait(() => {
     expect(screen.getByTestId(/player/i)).toHaveAttribute(
       'src',
-      'http://www.youtube.com/embed/123?autoplay=1&mute=0',
+      'https://www.youtube.com/embed/123?autoplay=1&mute=0',
     );
   });
 });
