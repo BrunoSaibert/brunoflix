@@ -22,7 +22,7 @@ const Player: React.FC<PlayerProps> = ({ videoId, type }) => {
       .then(response => {
         response.results.length && setData(response.results[0]);
       });
-  }, []);
+  }, [type, videoId]);
 
   useEffect(() => {
     getData();
