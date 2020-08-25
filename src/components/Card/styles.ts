@@ -1,4 +1,87 @@
-import styled, { css } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
+
+const changeBackground = (bgImage: string) => keyframes`
+  from {
+    background: #141414;
+  }
+  to {
+    background: url(${bgImage});
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+`;
+
+interface ImageProps {
+  bgImage: string;
+  orientation: 'vertical' | 'horizontal';
+  position: boolean;
+}
+
+export const Image = styled.div<ImageProps>`
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex-direction: row;
+
+  overflow: hidden;
+  background: #141414;
+
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0s;
+
+  img {
+    width: 100%;
+    height: ${prop => (prop.orientation === 'vertical' ? '500px' : '100%')};
+    object-fit: cover;
+    z-index: 3;
+  }
+
+  ${prop =>
+    prop.position &&
+    css`
+      p {
+        width: 50%;
+        height: 100%;
+        z-index: 2;
+
+        font-size: 240px;
+        line-height: 215px;
+        transform-origin: left;
+        color: black;
+        transform: scale(1.2, 1);
+        -webkit-text-fill-color: #000;
+        -webkit-text-stroke-width: 5px;
+        -webkit-text-stroke-color: #555;
+        font-family: fantasy;
+        font-weight: bold;
+        text-align: right;
+        letter-spacing: -10px;
+      }
+
+      img {
+        width: 50%;
+        height: auto;
+      }
+
+      img,
+      p {
+        opacity: 1;
+        transition: opacity 0.3s ease-in-out 0.1s;
+      }
+
+      &:hover {
+        animation: ${changeBackground(prop.bgImage)} 2s ease-in-out forwards;
+        transition-delay: 0.3s;
+
+        img,
+        p {
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out 1s;
+        }
+      }
+    `}
+`;
 
 export const Content = styled.div`
   display: flex;
@@ -8,17 +91,19 @@ export const Content = styled.div`
 
   width: 100%;
   height: 80px;
-  background: #141414;
   padding: 10px;
+  position: absolute;
+  background: #141414;
 
   opacity: 0;
+  bottom: 0;
+  z-index: 1;
 
-  transition: opacity 0.6s ease-in-out;
-  transition-delay: 0s;
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.3s;
 `;
 
 interface ContainerProps {
-  bgImage: string;
   orientation: 'vertical' | 'horizontal';
 }
 
@@ -31,26 +116,19 @@ export const Container = styled.div.attrs({
   flex-direction: column;
 
   cursor: pointer;
-  overflow: hidden;
   width: 100%;
-  height: ${prop => (prop.orientation === 'vertical' ? '400px' : '150px')};
   z-index: 1;
 
-  background: #141414;
-  background: url(${prop => prop.bgImage});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  position: relative;
 
   transition: all 0.2s ease-in;
-  transition-delay: 0.3s;
+  transition-delay: 0.2s;
 
   &:hover {
     transform: scale(
-      ${prop => (prop.orientation === 'vertical' ? '1.2' : '1.5')}
+      ${prop => (prop.orientation === 'vertical' ? '1.15' : '1.5')}
     );
     transition-delay: 0.6s;
-    height: ${prop => (prop.orientation === 'vertical' ? '420px' : '220px')};
     z-index: 100;
 
     border-radius: 4px;
@@ -58,8 +136,15 @@ export const Container = styled.div.attrs({
 
     ${Content} {
       opacity: 1;
+      bottom: -80px;
+      border-radius: 0 0 4px 4px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.9);
+      transition: opacity 0.3s ease-in-out 0.6s;
+    }
 
-      transition: opacity 0.3s ease-in-out;
+    ${Image} {
+      border-radius: 4px 4px 0 0;
+      transition: box-shadow 0.3s ease-in-out, border-radius 0.3s ease-in-out;
       transition-delay: 0.7s;
     }
   }

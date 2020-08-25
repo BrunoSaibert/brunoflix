@@ -49,13 +49,14 @@ const MyList: React.FC = () => {
       <S.Content qtdCards={qtdCards}>
         {movies
           .filter(({ backdrop_path }) => backdrop_path !== null)
-          .map(({ id, title, name, backdrop_path }) => (
+          .map(({ id, title, name, backdrop_path, poster_path }) => (
             <Card
               key={id}
               cardId={id}
               type={type}
               title={title || name}
-              bgImage={`http://image.tmdb.org/t/p/w500/${backdrop_path}`}
+              poster={`http://image.tmdb.org/t/p/w500/${poster_path}`}
+              backdrop={`http://image.tmdb.org/t/p/w500/${backdrop_path}`}
               orientation="horizontal"
             />
           ))}

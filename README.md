@@ -98,11 +98,11 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
   - [x] conter cards vertical
   - [x] conter navegação
 
-- [ ] SliderTop10:
+- [x] SliderTop10:
 
-  - [ ] conter título
-  - [ ] conter cards
-  - [ ] conter navegação
+  - [x] conter título
+  - [x] conter cards
+  - [x] conter navegação
 
 - [ ] Modal de detalhes:
 

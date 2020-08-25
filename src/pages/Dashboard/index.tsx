@@ -8,13 +8,18 @@ const Dashboard: React.FC = () => {
     <>
       <Hero type="tv" id={70523} />
       <Slider type="movie" list="now_playing" title="Minha lista" />
-      <Slider type="movie" list="popular" title="Populares na Brunoflix" />
+      <Slider
+        type="movie"
+        list="popular"
+        title="Top 10 de hoje no Brasil"
+        position
+      />
       <Slider type="movie" list="upcoming" title="Assistir novamente" />
-      <Slider type="movie" list="top_rated" title="Em alta" />
+      <Slider type="movie" list="top_rated" title="Populares na Brunoflix" />
       <Slider type="tv" list="popular" title="Originais Brunoflix" original />
       <Slider type="tv" list="on_the_air" title="Lançamentos" />
-      <Slider type="tv" list="airing_today" title="Novidades" />
-      <Slider type="tv" list="top_rated" title="Aclamados" />
+      <Slider type="tv" list="airing_today" title="Em alta" />
+      <Slider type="tv" list="top_rated" title="Novidades" />
     </>
   );
 };

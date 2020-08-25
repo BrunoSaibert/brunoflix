@@ -13,9 +13,16 @@ interface SliderProps {
   list: string;
   title: string;
   original?: boolean;
+  position?: boolean;
 }
 
-const Slider: React.FC<SliderProps> = ({ type, list, title, original }) => {
+const Slider: React.FC<SliderProps> = ({
+  type,
+  list,
+  title,
+  original,
+  position,
+}) => {
   const [movies, setMovies] = useState([]);
   const [qtdCards, setQtdCards] = useState(2);
   const [page, setPage] = useState(1);
@@ -49,14 +56,23 @@ const Slider: React.FC<SliderProps> = ({ type, list, title, original }) => {
 
       if (nextPage <= 1) {
         return setHasPrev(false);
-      } else if (nextPage >= movies.length / qtdCards) {
+      } else if (
+        nextPage >=
+        movies
+          .filter(
+            ({ backdrop_path, poster_path }) =>
+              backdrop_path !== null && poster_path !== null,
+          )
+          .slice(0, position ? 10 : 50).length /
+          qtdCards
+      ) {
         return setHasNext(false);
       } else {
         setHasPrev(true);
         setHasNext(true);
       }
     },
-    [movies, page, qtdCards],
+    [movies, page, qtdCards, position],
   );
 
   useEffect(() => {
@@ -75,27 +91,24 @@ const Slider: React.FC<SliderProps> = ({ type, list, title, original }) => {
     <S.Container>
       <S.Title>{title}</S.Title>
 
-      <S.SliderContainer orientation={original ? 'vertical' : 'horizontal'}>
-        <S.Content
-          qtdCards={qtdCards}
-          page={page}
-          orientation={original ? 'vertical' : 'horizontal'}
-        >
+      <S.SliderContainer>
+        <S.Content qtdCards={qtdCards} page={page}>
           {movies
             .filter(
               ({ backdrop_path, poster_path }) =>
                 backdrop_path !== null && poster_path !== null,
             )
-            .map(({ id, title, name, backdrop_path, poster_path }) => (
+            .slice(0, position ? 10 : 50)
+            .map(({ id, title, name, backdrop_path, poster_path }, index) => (
               <Card
                 key={id}
                 cardId={id}
                 type={type}
                 title={title || name}
-                bgImage={`http://image.tmdb.org/t/p/w500/${
-                  original ? poster_path : backdrop_path
-                }`}
+                poster={`http://image.tmdb.org/t/p/w500/${poster_path}`}
+                backdrop={`http://image.tmdb.org/t/p/w500/${backdrop_path}`}
                 orientation={original ? 'vertical' : 'horizontal'}
+                position={position ? index + 1 : 0}
               />
             ))}
         </S.Content>
