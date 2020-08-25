@@ -72,7 +72,7 @@ const Slider: React.FC<SliderProps> = ({
         setHasNext(true);
       }
     },
-    [movies, page, qtdCards],
+    [movies, page, qtdCards, position],
   );
 
   useEffect(() => {
