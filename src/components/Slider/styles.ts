@@ -20,28 +20,24 @@ export const Title = styled.p`
   top: 10px;
 `;
 
-interface SliderContainerProps {
-  orientation: 'vertical' | 'horizontal';
-}
-
-export const SliderContainer = styled.div<SliderContainerProps>`
+export const SliderContainer = styled.div`
   position: relative;
 
   button.control {
-    height: ${prop => (prop.orientation === 'vertical' ? '400px' : '150px')};
+    height: calc(100% - 80px);
   }
 `;
 
 interface ContentProps {
   qtdCards: number;
   page: number;
-  orientation: 'vertical' | 'horizontal';
 }
 
 export const Content = styled.div<ContentProps>`
   display: flex;
   align-items: center;
-  height: ${prop => (prop.orientation === 'vertical' ? '470px' : '230px')};
+
+  padding: 40px 0;
 
   transition: all 0.6s ease-in-out;
   position: relative;
@@ -76,7 +72,7 @@ export const Button = styled.button.attrs({
   top: 50%;
   transform: translateY(-50%);
 
-  width: 4%;
+  width: calc(4% + 8px);
 
   border: 0;
   outline: 0;
@@ -104,13 +100,13 @@ export const Button = styled.button.attrs({
   ${prop =>
     prop.direction === 'next' &&
     css`
-      right: calc(-4% - 4px);
+      right: calc(-4% - 8px);
     `}
 
   ${prop =>
     prop.direction === 'prev' &&
     css`
-      left: calc(-4% - 4px);
+      left: calc(-4% - 8px);
     `}
 
   ${prop =>

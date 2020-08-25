@@ -8,17 +8,21 @@ import * as S from './styles';
 interface CardProps {
   cardId: number;
   type: string;
-  bgImage: string;
+  poster: string;
+  backdrop: string;
   title: string;
   orientation: 'vertical' | 'horizontal';
+  position?: number;
 }
 
 const Card: React.FC<CardProps> = ({
   cardId,
   type,
-  bgImage,
+  poster,
+  backdrop,
   title,
   orientation,
+  position,
 }) => {
   const history = useHistory();
 
@@ -27,11 +31,19 @@ const Card: React.FC<CardProps> = ({
   };
 
   return (
-    <S.Container
-      bgImage={bgImage}
-      orientation={orientation}
-      onClick={handleClick}
-    >
+    <S.Container orientation={orientation} onClick={handleClick}>
+      <S.Image
+        bgImage={position ? backdrop : ''}
+        orientation={orientation}
+        position={!!position}
+      >
+        {!!position && <p>{position}</p>}
+        <img
+          src={position || orientation === 'vertical' ? poster : backdrop}
+          alt={title}
+        />
+      </S.Image>
+
       <S.Content>
         <S.Actions>
           <S.ActionItem isActive>
