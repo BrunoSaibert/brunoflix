@@ -39,7 +39,7 @@
 
 ## [](https://github.com/BrunoSaibert/brunoflix#--sobre-o-projeto) 💻 Sobre o projeto
 
-📺 Brunoflix - é um clone da interface da [Netflix](https://www.netflix.com/).
+📺 [Brunoflix](https://brunoflix.netlify.app/) - é um clone da interface da [Netflix](https://www.netflix.com/).
 
 Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeScript** e **Testes**.
 
