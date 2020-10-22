@@ -40,6 +40,10 @@ export const Item = styled.li`
   :last-child {
     border: none;
   }
+
+  :hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
 `;
 
 export const Link = styled.a`
