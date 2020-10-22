@@ -48,6 +48,7 @@ export const Item = styled.li`
 
 export const Link = styled.a`
   display: flex;
+  text-decoration: none;
 `;
 
 export const Thumbnail = styled.img`

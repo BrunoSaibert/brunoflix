@@ -86,6 +86,7 @@ export const Link = styled.a`
   flex: 1;
   justify-content: start;
   align-items: center;
+  text-decoration: none;
 `;
 
 interface ThumbnailProps {
