@@ -7,15 +7,15 @@ const wrapper = (placeHolder?: string) =>
   render(<Search placeHolder={placeHolder} />);
 
 it('Search Component', async () => {
-  const { container } = wrapper('Titles, people, genres');
+  const { container } = wrapper('Títulos, pessoas, gêneros');
 
   expect(await axe(container)).toHaveNoViolations();
 });
 
 it('Should render placeholder ', async () => {
-  wrapper('Titles, people, genres');
+  wrapper('Títulos, pessoas, gêneros');
 
   expect(
-    screen.getByPlaceholderText(/Titles, people, genres/),
+    screen.getByPlaceholderText(/Títulos, pessoas, gêneros/),
   ).toBeInTheDocument();
 });

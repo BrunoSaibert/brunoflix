@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaUser } from 'react-icons/fa';
 
 import logo from '../../assets/brunoflix.png';
+import { Login } from '../Login';
 import { Search } from '../Search';
 import { Notification } from '../Notification';
 
@@ -75,9 +75,9 @@ const Header: React.FC = () => {
       </S.Content>
 
       <S.Actions>
-        <Search placeHolder="Titles, people, genres" />
+        <Search placeHolder="Títulos, pessoas, gêneros" />
         <Notification movies={notifications} />
-        <FaUser />
+        <Login loggedIn={true} />
       </S.Actions>
     </S.Container>
   );
