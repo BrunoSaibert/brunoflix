@@ -14,6 +14,7 @@ interface SliderProps {
   title: string;
   original?: boolean;
   position?: boolean;
+  percent?: boolean;
 }
 
 const Slider: React.FC<SliderProps> = ({
@@ -22,6 +23,7 @@ const Slider: React.FC<SliderProps> = ({
   title,
   original,
   position,
+  percent,
 }) => {
   const [movies, setMovies] = useState([]);
   const [qtdCards, setQtdCards] = useState(2);
@@ -109,6 +111,7 @@ const Slider: React.FC<SliderProps> = ({
                 backdrop={`http://image.tmdb.org/t/p/w500/${backdrop_path}`}
                 orientation={original ? 'vertical' : 'horizontal'}
                 position={position ? index + 1 : 0}
+                percent={percent ? Math.floor(Math.random() * 99 + 1) : 0}
               />
             ))}
         </S.Content>

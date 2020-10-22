@@ -103,6 +103,33 @@ export const Content = styled.div`
   transition-delay: 0.3s;
 `;
 
+export const Progress = styled.div`
+  position: absolute;
+  bottom: -16px;
+
+  background: #333;
+  width: 80%;
+  height: 4px;
+  margin: 0 auto;
+  border-radius: 2px;
+  overflow: hidden;
+  opacity: 1;
+
+  transition: all 0.3s ease-in-out;
+  transition-delay: 0.4s;
+`;
+
+interface BarProps {
+  percent?: number;
+}
+
+export const Bar = styled.div<BarProps>`
+  width: ${prop => (prop.percent ? prop.percent : 0)}%;
+  height: 100%;
+
+  background: #f00;
+`;
+
 interface ContainerProps {
   orientation: 'vertical' | 'horizontal';
 }
@@ -146,6 +173,12 @@ export const Container = styled.div.attrs({
       border-radius: 4px 4px 0 0;
       transition: box-shadow 0.3s ease-in-out, border-radius 0.3s ease-in-out;
       transition-delay: 0.7s;
+    }
+
+    ${Progress} {
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      transition-delay: 0.5s;
     }
   }
 

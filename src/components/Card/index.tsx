@@ -5,6 +5,18 @@ import { useHistory } from 'react-router-dom';
 
 import * as S from './styles';
 
+interface ProgressBarProps {
+  percent: number;
+}
+
+const ProgressBar: React.FC<ProgressBarProps> = ({ percent }) => {
+  return (
+    <S.Progress>
+      <S.Bar percent={percent} />
+    </S.Progress>
+  );
+};
+
 interface CardProps {
   cardId: number;
   type: string;
@@ -13,6 +25,7 @@ interface CardProps {
   title: string;
   orientation: 'vertical' | 'horizontal';
   position?: number;
+  percent?: number;
 }
 
 const Card: React.FC<CardProps> = ({
@@ -23,6 +36,7 @@ const Card: React.FC<CardProps> = ({
   title,
   orientation,
   position,
+  percent,
 }) => {
   const history = useHistory();
 
@@ -62,6 +76,8 @@ const Card: React.FC<CardProps> = ({
 
         <S.Title>{title}</S.Title>
       </S.Content>
+
+      {!!percent && <ProgressBar percent={percent} />}
     </S.Container>
   );
 };

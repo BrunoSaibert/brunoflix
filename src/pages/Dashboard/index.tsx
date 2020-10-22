@@ -7,7 +7,12 @@ const Dashboard: React.FC = () => {
   return (
     <>
       <Hero type="tv" id={70523} />
-      <Slider type="movie" list="now_playing" title="Minha lista" />
+      <Slider
+        type="movie"
+        list="now_playing"
+        title="Continuar assistindo"
+        percent
+      />
       <Slider
         type="movie"
         list="popular"
