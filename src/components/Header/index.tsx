@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaSearch, FaBell, FaUser } from 'react-icons/fa';
+import { FaSearch, FaUser } from 'react-icons/fa';
 
 import logo from '../../assets/brunoflix.png';
+import { Notification } from '../Notification';
 
 import * as S from './styles';
 
@@ -13,7 +14,7 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.pageYOffset > 1)
+      setIsScrolled(window.pageYOffset > 1);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -72,7 +73,7 @@ const Header: React.FC = () => {
 
       <S.Actions>
         <FaSearch />
-        <FaBell />
+        <Notification count={3} />
         <FaUser />
       </S.Actions>
     </S.Container>
