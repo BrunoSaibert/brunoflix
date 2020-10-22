@@ -10,14 +10,10 @@ interface NotificationMovieProps {
   days: string;
 }
 interface NotificationProps {
-  count?: number;
   movies?: Array<NotificationMovieProps>;
 }
 
-export const Notification: React.FC<NotificationProps> = ({
-  count,
-  movies,
-}) => {
+export const Notification: React.FC<NotificationProps> = ({ movies }) => {
   const [isShown, setIsShown] = useState(false);
 
   const renderMoviesList = (movie: NotificationMovieProps) => (
@@ -42,7 +38,7 @@ export const Notification: React.FC<NotificationProps> = ({
         onMouseLeave={() => setIsShown(false)}
       >
         <FaBell />
-        {count && <S.Badge>{count}</S.Badge>}
+        {movies && <S.Badge>{movies.length}</S.Badge>}
 
         {isShown && (
           <S.Modal>{movies?.map(movie => renderMoviesList(movie))}</S.Modal>

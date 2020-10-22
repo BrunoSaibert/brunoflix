@@ -11,33 +11,32 @@ interface NotificationMovieProps {
   days: string;
 }
 interface NotificationProps {
-  count?: number;
   movies?: Array<NotificationMovieProps>;
 }
 
-const wrapper = ({ count, movies }: NotificationProps) =>
-  render(<Notification count={count} movies={movies} />);
+const wrapper = ({ movies }: NotificationProps) =>
+  render(<Notification movies={movies} />);
 
 it('Notification Component', async () => {
-  const { container } = wrapper({ count: 4 });
+  const { container } = wrapper({ movies: notifications });
 
   expect(await axe(container)).toHaveNoViolations();
 });
 
 it('Show badget if have notification', async () => {
-  wrapper({ count: 4 });
+  wrapper({ movies: notifications });
 
-  expect(screen.getByText(/4/i)).toBeInTheDocument();
+  expect(screen.getByText(/3/i)).toBeInTheDocument();
 });
 
 it("Do not Show badget if don't have notification", async () => {
   wrapper({});
 
-  expect(screen.queryByText('4')).toBeNull();
+  expect(screen.queryByText('3')).toBeNull();
 });
 
 it('Render notification movies', async () => {
-  wrapper({ count: 3, movies: notifications });
+  wrapper({ movies: notifications });
 
   expect(screen.queryByText('3')).toBeInTheDocument();
 });

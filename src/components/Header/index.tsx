@@ -76,7 +76,7 @@ const Header: React.FC = () => {
 
       <S.Actions>
         <Search placeHolder="Titles, people, genres" />
-        <Notification count={3} movies={notifications} />
+        <Notification movies={notifications} />
         <FaUser />
       </S.Actions>
     </S.Container>
