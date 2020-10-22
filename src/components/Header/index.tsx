@@ -6,6 +6,8 @@ import logo from '../../assets/brunoflix.png';
 import { Search } from '../Search';
 import { Notification } from '../Notification';
 
+import notifications from '../../assets/json/notifications.json';
+
 import * as S from './styles';
 
 const Header: React.FC = () => {
@@ -74,7 +76,7 @@ const Header: React.FC = () => {
 
       <S.Actions>
         <Search placeHolder="Titles, people, genres" />
-        <Notification count={3} />
+        <Notification movies={notifications} />
         <FaUser />
       </S.Actions>
     </S.Container>
