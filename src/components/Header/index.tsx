@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaSearch, FaUser } from 'react-icons/fa';
+import { FaUser } from 'react-icons/fa';
 
 import logo from '../../assets/brunoflix.png';
+import { Search } from '../Search';
 import { Notification } from '../Notification';
 
 import * as S from './styles';
@@ -72,7 +73,7 @@ const Header: React.FC = () => {
       </S.Content>
 
       <S.Actions>
-        <FaSearch />
+        <Search placeHolder="Titles, people, genres" />
         <Notification count={3} />
         <FaUser />
       </S.Actions>
