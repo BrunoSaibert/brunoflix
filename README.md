@@ -53,10 +53,10 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
   - [x] navegar para a página inicial
   - [x] navegar entre as páginas
   - [x] setar página atual
-  - [ ] campo de busca
-  - [ ] badge alerta
-  - [ ] menu suspenso alerta
-  - [ ] menu suspenso usuário
+  - [x] campo de busca
+  - [x] badge alerta
+  - [x] menu suspenso alerta
+  - [x] menu suspenso usuário
 
 - [x] Hero:
 
@@ -77,7 +77,7 @@ Projeto desenvolvido para aprofundar meus conhecimentos de **ReactJS**, **TypeSc
     - [x] ficar acima dos demais cards
     - [x] mostrar título e botões
   - [ ] se tem exibição:
-    - [ ] barra de progresso
+    - [x] barra de progresso
     - [ ] esconder o título
 
 - [x] Slider (imagem vertical):
@@ -191,7 +191,10 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ## 💪 Como contribuir para o projeto
 
+Lembre de demonstrar que gostou com uma estrela ⭐
+
 1. Faça um **fork** do projeto.
+
 2. Crie uma nova **branch** com as suas alterações:
 
 ```
@@ -211,6 +214,18 @@ git push origin my-feature
 ```
 
 > Caso tenha alguma dúvida confira este [guia de como contribuir no GitHub](./CONTRIBUTING.md)
+
+---
+
+## 🧙‍♂️ Contribuidores do projeto
+
+Obrigado por participar desse projeto
+
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/kimuradev"><img style="border-radius: 50%;" src="https://avatars2.githubusercontent.com/u/4400304?s=460&u=3318d218355405b870d14d54f49f363761b98803&v=4" width="100px;" alt=""/><br /><sub><b>kimuradev</b></sub></a></td>
+  </tr>
+</table>
 
 ---
 
